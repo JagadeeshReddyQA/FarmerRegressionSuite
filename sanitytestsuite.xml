@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Farmer App Sanity Suite">
+	<test thread-count="5" name="FarmerApp Sanity Suite">
+		<classes>
+			<class name="com.farmer.scripts.Login.TC_002_SignIn_ValidLogin_Test" />
+
+			<class name="com.farmer.scripts.WarehouseRequest.TC_002_WH_Create_Sell_Now_Request_and_verify_ATR_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_003_WH_Create_Sell_Later_Request_and_verify_ATR_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_005_EditATR_Test" />
+			
+			<class name="com.farmer.scripts.SaleRequest.TC_002_SR_Create_New_Sales_Request_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_003_SR_Verify_Sale_Request_OpenTab_Test"/>
+	
+			<class name="com.farmer.scripts.SaleRequest.TC_005_SR_Verify_Cancel_Option_Opentab_Test"/>
+			
+			<class name="com.farmer.scripts.MyProfile.TC_001_Profile_Verify_ProfileScreen_Test"/>
+			<class name="com.farmer.scripts.MyProfile.TC_002_Profile_Edit_Test"/>
+			<class name="com.farmer.scripts.Login.TC_003_Logout_Test"/>		
+		</classes>
+		
+	</test> <!-- Test -->
+	
+</suite> <!-- Suite -->

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Farmer App Complete Test Suite">
+	<test thread-count="5" name="Complete Test Suite">
+		<classes>
+	
+			<class name="com.farmer.scripts.Login.TC_001_LAN_Perform_Change_Language_Test" />
+			<class name="com.farmer.scripts.Login.TC_001_SignIn_InvalidLogin_Test" />
+			<class name="com.farmer.scripts.Login.TC_002_SignIn_ValidLogin_Test" />
+			<class name="tests.TC2_ValidateQuickActionsTest" />
+			<class name="tests.TC3_ValidateHamBurgerMenuTest" />
+			<class name="tests.TC6_ValidateStatementOfAccountTest" />
+			<class name="tests.TC8_VerifyDashDoard_StockDetails_Test" />
+			<class name="tests.TC9_ValidateRewards_Test"/>
+
+			<class name="com.farmer.scripts.WarehouseRequest.TC_001_WH_Verify_Screen_If_No_Records_Are_Avaliable_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_002_WH_Create_Sell_Now_Request_and_verify_ATR_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_003_WH_Create_Sell_Later_Request_and_verify_ATR_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_004_ViewDetails_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_005_EditATR_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_006_WH_Verify_Sorting_Operation_By_Oldest_Request_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_007_WH_Verify_Sorting_Operation_By_Recent_Request_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_008_WH_Verify_Filter_Operation_Test" />
+			<class name="com.farmer.scripts.WarehouseRequest.TC_009_Search_ATR_Test" />
+			
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_001_SRR_Verify_Screen_When_SR_Screen_Is_Empty_Test" />
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_002_SRR_Creating_New_SR_Request_Self_Test" />
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_003_SRR_Creating_New_SR_Request_Sell_Test" />
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_004_SRR_ATR_View_Details_Test"/>
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_005_SRR_ATR_Edit_Details_Test"/>
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_006_SSR_Sort_By_Oldest_Request_Test"/>
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_007_SSR_Sort_By_Recent_Request_Test"/>
+			<class name="com.farmer.scripts.StockReleaseRequest.TC_008_SRR_Verify_Filter_Operation_Test"/>
+			
+			<class name="com.farmer.scripts.SaleRequest.TC_001_SR_Verify_Screen_If_No_Records_Are_Avaliable_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_002_SR_Create_New_Sales_Request_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_003_SR_Verify_Sale_Request_OpenTab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_004_SR_Verify_Sale_Request_History_Tab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_004_SR_Verify_Sale_Request_History_Tab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_005_SR_Verify_SortingOrder_Historytab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_006_SR_Verify_SortingOrder_OpenTab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_007_SR_Verify_FilterOperation_Opentab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_005_SR_Verify_Cancel_Option_Opentab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_008_SR_Verify_Sale_Request_History_Tab_Test"/>
+			<class name="com.farmer.scripts.SaleRequest.TC_009_SR_Verify_SortingOrder_Historytab_Test"/>
+		 	<class name="com.farmer.scripts.SaleRequest.TC_010_SR_Verify_FilterOperation_Historytab_Test"/>
+			
+			<class name="com.farmer.scripts.Offers.TC_001_Offers_Verify_No_Offers_Test"/>
+			<class name="com.farmer.scripts.Offers.TC_002_Offers_Verify_HistoryTab_Test"/>
+			<class name="com.farmer.scripts.Offers.TC_003_Offers_Verify_If_Usr_can_AcceptOffer_Test"/>
+			
+			<class name="com.farmer.scripts.AdvancePayment.TC_001_AP_Verify_Screen_If_No_Records_Are_Avaliable_Test" />
+			<class name="com.farmer.scripts.AdvancePayment.TC_002_AP_Verify_When_There_Are_No_Products_Available_Test" />
+			<class name="com.farmer.scripts.AdvancePayment.TC_003_AP_Verify_The_Amount_Farmer_Is_Eligible_To_Request_Test" />
+			<class name="com.farmer.scripts.AdvancePayment.TC_004_AP_Create_New_Payment_Request_If_There_Are_Products_Available_Test" />
+			<class name="com.farmer.scripts.AdvancePayment.TC_005_AP_Verify_Sorting_Operation_Sort_By_Oldest_Request_Test" />	
+			<class name="com.farmer.scripts.AdvancePayment.TC_006_AP_Verify_Sorting_Operation_Sort_By_Recent_Request_Test" />
+			<class name="com.farmer.scripts.AdvancePayment.TC_007_AP_Verify_Filter_Operation_Test" />			
+			
+			<!-- <class name="com.farmer.scripts.SOA.TC_001_SOA_Validate_StatementofAccounts_Test"/>
+			<class name="com.farmer.scripts.SOA.TC_002_SOA_Validate_Quantity_Screen_Test"/>
+		 	<class name="com.farmer.scripts.SOA.TC_003_SOA_Validate_Financials_Screen_Test"/>
+		 	<class name="com.farmer.scripts.SOA.TC_004_SOA_Validate_Date_Test"/> -->
+			
+			<class name="com.farmer.scripts.MyProfile.TC_001_Profile_Verify_ProfileScreen_Test"/>
+			<class name="com.farmer.scripts.MyProfile.TC_002_Profile_Edit_Test"/>
+			<class name="com.farmer.scripts.Login.TC_003_Logout_Test"/>
+			
+			<class name="com.farmer.script.WarehouseAge.TC_001_WH_AgeAbove_ThreeYears_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_002_WH_Age_OnetoTwoYears_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_003_WH_Age_TwoToThree_Years_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_004_WH_Age_ZeroToOne_Years_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_005_WH_AgeOnetoTwoYear_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_006_WH_AgeTwotoThree_Test"/>
+			<class name="com.farmer.script.WarehouseAge.TC_007_WH_AgeWithNoLimit_Test"/>
+		
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_001_LIA_NoLandInfo_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_002_LIA_WithLandInfo_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_003_LIA_NoHarvestInfo_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_004_LIA_MaxUpperYieldLimit_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_005_LIA_Edit_NotEditable_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_006_LIA_Edit_ChangeProduct_Test"/>
+			<class name="com.farmer.script.LandInAcres_HarvestDetails.TC_007_LIA_LandWithNoHarvestInfo_Test"/>
+			
+			<class name="com.farmer.script.SoilTest.TC_001_ST_No_Request_Yet_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_002_ST_Record_HistoryTab_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_004_ST_ViewDetails_OpenTab_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_007_ST_OpenTab_SortBy_Oldest_Record_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_008_ST_OpenTab_Recent_Record_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_009_ST_OpenTab_FilterOperation_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_005_ST_ViewDetails_ResultReady_HistoryTab_Test"/>
+		<!-- 	<class name="com.farmer.script.SoilTest.TC_006_ST_ViewDetails_FailedStatus_History_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_010_ST_HistoryTab_SortBy_OldestRecord_Test"/>
+			<class name="com.farmer.script.SoilTest.TC_011_ST_HistoryTab_SortBy_RecentRecord_Test"/> -->
+			<class name="com.farmer.script.SoilTest.TC_012_ST_HistoryTab_FilterOperation_Test"/>
+			
+		</classes>
+		
+	</test> <!-- Test -->
+	
+	<test thread-count="5" name="Farmer Regression2">
+	<classes>
+						
+			<class name="com.farmer.scripts.Login.TC_003_Logout_Test"/>
+			<class name="com.farmer.scripts.Login.TC_1_ChangeLanguagetoHindi_Login_Test"/>
+			<class name="com.farmer.scripts.Login.TC_2_ChangeLanguagetoMarathi_Login_Test"/>
+			<class name="com.farmer.scripts.Login.TC_3_ChnangeLanguagetoKannada_Login_Test"/>
+			<class name="com.farmer.scripts.Login.TC_4_ChangeLanguagetoEnglish_Login_Test"/>
+ 			
+ 		<!-- 	<class name="com.farmer.scripts.Login.TC_000_ChangeLanguage_Login_Test" /> -->			
+	
+	</classes>
+	
+	
+	</test>
+</suite> <!-- Suite -->

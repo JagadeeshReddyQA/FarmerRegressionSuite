@@ -1,0 +1,4858 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Report</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Appium Extent Reports</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 3, 2023 09:19:19 AM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 3, 2023 09:19:19 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 3, 2023 09:50:48 AM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>58</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>3</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='95%'>
+<b>58</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='4%'><b>3</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='92%'><b>300</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>3</b> events failed,
+<b data-tooltip='%'>21</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Sign_In_Valid_Credentials":23.04,"Quick Action Menu":59.6,"HamBurger Menu":13.793,"Statement Of Account Page":9.193,"Stock Details":3.585,"My Rewards":20.914,"Notifications Title":40.658,"Read All Notifications":49.064,"Notifications Message Content":45.537,"WareHouse Request":19.445,"W_H Sell Now Request":95.311,"W_H Sell Later Request":81.896,"S_R_ViewDetails":5.496,"Edit ATR":15.921,"SORT BY Old Request":10.574,"SORT BY Recent Request":8.529,"FILTER OPERATION":56.412,"WH_Search_ATR":11.551,"S_R_NoRecord":7.33,"S_R_NewRequest":55.642,"S_R_OpenTab":8.041,"S_R_HistoryTab ":9.25,"SortBy_HistoryTab":15.218,"SortBy_OpenTab":14.174,"S_R_Opentab_Filter":56.723,"S_R_CancelRequest":12.268,"S_R_HistoryTab ":9.993,"SortBy_HistoryTab":15.166,"S_R_Historytab_Filter":88.512,"Offers_NoOffers":4.108,"Offers_HistoryTab":11.899,"Offers_AcceptOffers":16.625,"A_P_NoRecord":16.072,"A_P_NoProduct":16.312,"A_P_EligibleAmount":33.771,"A_P_Request":37.648,"A_P_SORT_BY_Old_Request":9.039,"A_P_SORT_BY_Recent_Request":6.174,"A_P_FILTER_OPERATION":80.167,"S_O_A_Validate":21.283,"S_O_A_QuantityScreen":32.378,"S_O_A_ValidateDate":19.785,"Profile_Screen":5.496,"Profile_Edit":16.233,"Logout":14.352,"MarketPlace Title":70.317,"Warehouse Details in MarketPlace":5.152,"PPL Message":8.69,"Home Button Validation In MarketPlace":11.906,"My Orders Button Validation In MarketPlace":22.937,"My Cart Button Validation In MarketPlace":21.707,"PPL Message Validation In My Cart":22.713,"Start Shopping":21.956,"Product Listing under Categories":67.664,"Search Product In MarketPlace":65.478,"Verify Product Details In MarketPlace":28.643,"Add Product to cart":48.733,"Perform Sort By Price":34.334,"Perform Filter Operation":76.432,"Categories In ProductPage":16.239,"Add Product to cart in Product Listing Screen":16.237
+};
+</script>
+<div class="row">
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 58,
+failParent: 3,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 300,
+failEvents: 3,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 21
+};
+</script><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>09:48:59 AM</td>
+<td>
+<a href="#" class="linked" test-id='59' id='59'>Perform Filter Operation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>09:50:16 AM</td>
+<td>
+<a href="#" class="linked" test-id='60' id='60'>Categories In ProductPage</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>09:50:32 AM</td>
+<td>
+<a href="#" class="linked" test-id='61' id='61'>Add Product to cart in Product Listing Screen</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Sign_In_Valid_Credentials</p>
+            <p class="text-sm">
+              <span>9:19:39 AM</span> / <span>00:00:23:040</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Sign_In_Valid_Credentials</h5>
+<span class='badge badge-success'>08.03.2023 9:19:39 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:20:02 AM</span>
+<span class='badge badge-default'>00:00:23:040</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify If User Is Able To SignIn With Valid Credentials</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:19:52 AM</td>
+        <td>
+          USERNAME: qat1-uat
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:19:52 AM</td>
+        <td>
+          PASSWORD: 1234567
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:00 AM</td>
+        <td>
+          User Loged In Successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:01 AM</td>
+        <td>
+          Displayed Name: QA Automation Testing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:02 AM</td>
+        <td>
+          Msg Displayed: Important
+
+This rate is only indicative and is not the exact sale price. Seller should consider the outside Market Rate, Market News/Information before arriving at a conclusion of their product rate before making an offer.
+
+This rate is derived from GrainBank system's real time transactions trend for last few days/weeks/months. Real price is available in offers section or if you place your offer, it’s valid only once accepted by buyers.
+
+Please note that just placing your offer doesn’t confirm the sale of your produce.
+
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Quick Action Menu</p>
+            <p class="text-sm">
+              <span>9:20:02 AM</span> / <span>00:00:59:600</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Quick Action Menu</h5>
+<span class='badge badge-success'>08.03.2023 9:20:02 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:21:02 AM</span>
+<span class='badge badge-default'>00:00:59:600</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating Quick Actions Menu Items</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:03 AM</td>
+        <td>
+          Displayed Farmer Name:QA Automation Testing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:05 AM</td>
+        <td>
+          My Rewards Title Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:10 AM</td>
+        <td>
+          Ware House Request Title Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:20:19 AM</td>
+        <td>
+          Advance Payment Title Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:20:29 AM</td>
+        <td>
+          Stock Release Requests Title Not Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:20:45 AM</td>
+        <td>
+          Statement of Account Title Not Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:02 AM</td>
+        <td>
+          Sales Request Title Matched
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">HamBurger Menu</p>
+            <p class="text-sm">
+              <span>9:21:07 AM</span> / <span>00:00:13:793</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">HamBurger Menu</h5>
+<span class='badge badge-success'>08.03.2023 9:21:07 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:21:20 AM</span>
+<span class='badge badge-default'>00:00:13:793</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating HamBurger Menu Items</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:20 AM</td>
+        <td>
+          TC3_ValidateHamBurgerMenuTest Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Statement Of Account Page</p>
+            <p class="text-sm">
+              <span>9:21:20 AM</span> / <span>00:00:09:193</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Statement Of Account Page</h5>
+<span class='badge badge-success'>08.03.2023 9:21:20 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:21:30 AM</span>
+<span class='badge badge-default'>00:00:09:193</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating Warehouse Request</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:21:28 AM</td>
+        <td>
+          Statement of Account Title Not Matched
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:30 AM</td>
+        <td>
+          Total Stock: 369 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Stock Details</p>
+            <p class="text-sm">
+              <span>9:21:37 AM</span> / <span>00:00:03:585</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Stock Details</h5>
+<span class='badge badge-success'>08.03.2023 9:21:37 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:21:40 AM</span>
+<span class='badge badge-default'>00:00:03:585</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verifying If Stock Details Are Displayed Correctly</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:38 AM</td>
+        <td>
+          My Stock Value: ₹ 5,32,660
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:39 AM</td>
+        <td>
+          Booked Stock: 511 Quintal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:40 AM</td>
+        <td>
+          Deposited Stock: 500 Quintal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:21:40 AM</td>
+        <td>
+          Deposited Stock: 369 Quintal
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">My Rewards</p>
+            <p class="text-sm">
+              <span>9:21:40 AM</span> / <span>00:00:20:914</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">My Rewards</h5>
+<span class='badge badge-success'>08.03.2023 9:21:40 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:22:01 AM</span>
+<span class='badge badge-default'>00:00:20:914</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verifying If My Rewards Are Displayed Correctly</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:22:01 AM</td>
+        <td>
+          TC9_ValidateRewards_Test Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Notifications Title</p>
+            <p class="text-sm">
+              <span>9:22:01 AM</span> / <span>00:00:40:658</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Notifications Title</h5>
+<span class='badge badge-success'>08.03.2023 9:22:01 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:22:42 AM</span>
+<span class='badge badge-default'>00:00:40:658</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating Notifications Page Title</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:22:41 AM</td>
+        <td>
+          Title Displayed: Notifications
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:22:42 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Read All Notifications</p>
+            <p class="text-sm">
+              <span>9:22:42 AM</span> / <span>00:00:49:064</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Read All Notifications</h5>
+<span class='badge badge-success'>08.03.2023 9:22:42 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:23:31 AM</span>
+<span class='badge badge-default'>00:00:49:064</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating Read All in Notifications Page</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:23:31 AM</td>
+        <td>
+          Message DisplayedAll notifications have been read
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:23:31 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Notifications Message Content</p>
+            <p class="text-sm">
+              <span>9:23:32 AM</span> / <span>00:00:45:537</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Notifications Message Content</h5>
+<span class='badge badge-success'>08.03.2023 9:23:32 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:24:17 AM</span>
+<span class='badge badge-default'>00:00:45:537</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validating Notification Messege Content</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:24:17 AM</td>
+        <td>
+          DO/005138 अपडेट किया गया है गेहूँ की 3.90 क्विंटल रिलीज के लिए, तारीख:27-07-2023  वेयरहाउस: null,  कृपया डीसी के विवरण जोड़ने के लिए आगे बढ़ें।
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:24:17 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">WareHouse Request</p>
+            <p class="text-sm">
+              <span>9:24:18 AM</span> / <span>00:00:19:445</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">WareHouse Request</h5>
+<span class='badge badge-success'>08.03.2023 9:24:18 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:24:37 AM</span>
+<span class='badge badge-default'>00:00:19:445</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify WareHouse Request Screen If No Records Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:24:37 AM</td>
+        <td>
+          Farmer Have WareHouse Request Record
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">W_H Sell Now Request</p>
+            <p class="text-sm">
+              <span>9:24:39 AM</span> / <span>00:01:35:311</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">W_H Sell Now Request</h5>
+<span class='badge badge-success'>08.03.2023 9:24:39 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:26:15 AM</span>
+<span class='badge badge-default'>00:01:35:311</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying User Is Able To Create Sell Now Warehouse Request</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:24:56 AM</td>
+        <td>
+          Farmer Requesting WareHouse Sell Now Request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:24:56 AM</td>
+        <td>
+          Farmer Had Already Raised WareHouse Request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:03 AM</td>
+        <td>
+          Message Displayed: Refer a Farmer & Earn ₹100
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:06 AM</td>
+        <td>
+          You have successfully created a  
+ warehouse request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:15 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:15 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:15 AM</td>
+        <td>
+          ID: ATR-030330
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:15 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:15 AM</td>
+        <td>
+          ATR_Quantity: 5 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">W_H Sell Later Request</p>
+            <p class="text-sm">
+              <span>9:26:15 AM</span> / <span>00:01:21:896</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">W_H Sell Later Request</h5>
+<span class='badge badge-success'>08.03.2023 9:26:15 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:27:37 AM</span>
+<span class='badge badge-default'>00:01:21:896</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying User Is Able To Create Storage/Sell Warehouse Request</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:33 AM</td>
+        <td>
+          Farmer Requesting WareHouse Storage/Sell Later Request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:26:33 AM</td>
+        <td>
+          Farmer Had Already Raised WareHouse Request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:25 AM</td>
+        <td>
+          Message Displayed: Refer a Farmer & Earn ₹100
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:28 AM</td>
+        <td>
+          You have successfully created a  
+ warehouse request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:37 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:37 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:37 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:37 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:37 AM</td>
+        <td>
+          ATR_Quantity: 5 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_ViewDetails</p>
+            <p class="text-sm">
+              <span>9:27:38 AM</span> / <span>00:00:05:496</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_ViewDetails</h5>
+<span class='badge badge-success'>08.03.2023 9:27:38 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:27:43 AM</span>
+<span class='badge badge-default'>00:00:05:496</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify View Details</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Requried Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Quantity: 5 Q
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Warehouse Type: Storage / Sell later
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Warehouse Name: Innovation Warehouse
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:43 AM</td>
+        <td>
+          Remarks: QA Testing
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Edit ATR</p>
+            <p class="text-sm">
+              <span>9:27:51 AM</span> / <span>00:00:15:921</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Edit ATR</h5>
+<span class='badge badge-success'>08.03.2023 9:27:51 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:28:07 AM</span>
+<span class='badge badge-default'>00:00:15:921</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Edit ATR</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:27:55 AM</td>
+        <td>
+          Message Displayed: You are editing warehouse request
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:07 AM</td>
+        <td>
+          W_H Quantity Edited Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SORT BY Old Request</p>
+            <p class="text-sm">
+              <span>9:28:12 AM</span> / <span>00:00:10:574</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SORT BY Old Request</h5>
+<span class='badge badge-success'>08.03.2023 9:28:12 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:28:22 AM</span>
+<span class='badge badge-default'>00:00:10:574</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Sort the List By Old Order</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:22 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:22 AM</td>
+        <td>
+          ATR_Status: Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:22 AM</td>
+        <td>
+          ID: ATR-026721
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:22 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:22 AM</td>
+        <td>
+          ATR_Quantity: 300 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SORT BY Recent Request</p>
+            <p class="text-sm">
+              <span>9:28:22 AM</span> / <span>00:00:08:529</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SORT BY Recent Request</h5>
+<span class='badge badge-success'>08.03.2023 9:28:22 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:28:31 AM</span>
+<span class='badge badge-default'>00:00:08:529</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Sort the List By Recent Order</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:31 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:31 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:31 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:31 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:31 AM</td>
+        <td>
+          ATR_Quantity: 6 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">FILTER OPERATION</p>
+            <p class="text-sm">
+              <span>9:28:34 AM</span> / <span>00:00:56:412</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">FILTER OPERATION</h5>
+<span class='badge badge-success'>08.03.2023 9:28:34 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:29:30 AM</span>
+<span class='badge badge-default'>00:00:56:412</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Filter the List</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:36 AM</td>
+        <td>
+          Status Of Open Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:40 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:40 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:40 AM</td>
+        <td>
+          Status Of Waiting For Approval Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:44 AM</td>
+        <td>
+          ATR_Status: Waiting for Approval
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:44 AM</td>
+        <td>
+          ID: ATR-026727
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:44 AM</td>
+        <td>
+          Status Of Approved Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:49 AM</td>
+        <td>
+          ATR_Status: Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:49 AM</td>
+        <td>
+          ID: ATR-029300
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:49 AM</td>
+        <td>
+          Status Of Not Approved Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:53 AM</td>
+        <td>
+          ATR_Status: Not Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:53 AM</td>
+        <td>
+          ID: ATR-026725
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:53 AM</td>
+        <td>
+          Status Of Rejected Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:57 AM</td>
+        <td>
+          ATR_Status: Rejected
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:57 AM</td>
+        <td>
+          ID: ATR-026728
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:28:57 AM</td>
+        <td>
+          Status Of AccountsRejected Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:02 AM</td>
+        <td>
+          ATR_Status: Accounts Reject
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:02 AM</td>
+        <td>
+          ID: ATR-026726
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:04 AM</td>
+        <td>
+          Filter through Start Date and End Date
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:12 AM</td>
+        <td>
+          ATR_Status: Accounts Reject
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:12 AM</td>
+        <td>
+          ID: ATR-026726
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:12 AM</td>
+        <td>
+          Filter through Search ATR Number
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:30 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">WH_Search_ATR</p>
+            <p class="text-sm">
+              <span>9:29:33 AM</span> / <span>00:00:11:551</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">WH_Search_ATR</h5>
+<span class='badge badge-success'>08.03.2023 9:29:33 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:29:44 AM</span>
+<span class='badge badge-default'>00:00:11:551</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Search ATR</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:35 AM</td>
+        <td>
+          Search ATR Number: ATR
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:40 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:40 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:40 AM</td>
+        <td>
+          Search ATR Number: 030331
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:44 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:44 AM</td>
+        <td>
+          ID: ATR-030331
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_NoRecord</p>
+            <p class="text-sm">
+              <span>9:29:46 AM</span> / <span>00:00:07:330</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_NoRecord</h5>
+<span class='badge badge-success'>08.03.2023 9:29:46 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:29:54 AM</span>
+<span class='badge badge-default'>00:00:07:330</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sales Request Screen If No Records Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:29:54 AM</td>
+        <td>
+          No Request yet!
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_NewRequest</p>
+            <p class="text-sm">
+              <span>9:29:56 AM</span> / <span>00:00:55:642</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_NewRequest</h5>
+<span class='badge badge-success'>08.03.2023 9:29:56 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:30:52 AM</span>
+<span class='badge badge-default'>00:00:55:642</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sales Request Screen If No Records Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:15 AM</td>
+        <td>
+          No Request yet!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:50 AM</td>
+        <td>
+          Message Displayed: Sales Request Added Successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:52 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:52 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:52 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:30:52 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_OpenTab</p>
+            <p class="text-sm">
+              <span>9:30:54 AM</span> / <span>00:00:08:041</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_OpenTab</h5>
+<span class='badge badge-success'>08.03.2023 9:30:54 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:31:02 AM</span>
+<span class='badge badge-default'>00:00:08:041</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sales Request Screen Under Open Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:02 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:02 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:02 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:02 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_HistoryTab </p>
+            <p class="text-sm">
+              <span>9:31:04 AM</span> / <span>00:00:09:250</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_HistoryTab </h5>
+<span class='badge badge-success'>08.03.2023 9:31:04 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:31:13 AM</span>
+<span class='badge badge-default'>00:00:09:250</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sales Request Screen Under History Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:13 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:13 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:13 AM</td>
+        <td>
+          ID: SR/230509/000010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:13 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SortBy_HistoryTab</p>
+            <p class="text-sm">
+              <span>9:31:15 AM</span> / <span>00:00:15:218</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SortBy_HistoryTab</h5>
+<span class='badge badge-success'>08.03.2023 9:31:15 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:31:30 AM</span>
+<span class='badge badge-default'>00:00:15:218</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sort By Under History Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:27 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:27 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:27 AM</td>
+        <td>
+          ID: SR/230509/000002
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:27 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:30 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:30 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:30 AM</td>
+        <td>
+          ID: SR/230509/000010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:30 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SortBy_OpenTab</p>
+            <p class="text-sm">
+              <span>9:31:33 AM</span> / <span>00:00:14:174</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SortBy_OpenTab</h5>
+<span class='badge badge-success'>08.03.2023 9:31:33 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:31:47 AM</span>
+<span class='badge badge-default'>00:00:14:174</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sort By Under Open Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:44 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:44 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:44 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:44 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:47 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:47 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:47 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:47 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_Opentab_Filter</p>
+            <p class="text-sm">
+              <span>9:31:49 AM</span> / <span>00:00:56:723</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_Opentab_Filter</h5>
+<span class='badge badge-success'>08.03.2023 9:31:49 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:32:46 AM</span>
+<span class='badge badge-default'>00:00:56:723</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Filter Operation Under Open Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:31:57 AM</td>
+        <td>
+          Status Of Open Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:02 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:02 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:02 AM</td>
+        <td>
+          Status Of Approved Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:19 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:19 AM</td>
+        <td>
+          Status Of Offer Accepting Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:37 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:38 AM</td>
+        <td>
+          Filter through Start Date and End Date
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:46 AM</td>
+        <td>
+          ATR_Status: OPEN
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:46 AM</td>
+        <td>
+          ID: SR/230803/000001
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_CancelRequest</p>
+            <p class="text-sm">
+              <span>9:32:46 AM</span> / <span>00:00:12:268</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_CancelRequest</h5>
+<span class='badge badge-success'>08.03.2023 9:32:46 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:32:58 AM</span>
+<span class='badge badge-default'>00:00:12:268</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Cancel Request Under Open Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:32:58 AM</td>
+        <td>
+          Sale Request Cancelled Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_HistoryTab </p>
+            <p class="text-sm">
+              <span>9:33:00 AM</span> / <span>00:00:09:993</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_HistoryTab </h5>
+<span class='badge badge-success'>08.03.2023 9:33:00 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:33:10 AM</span>
+<span class='badge badge-default'>00:00:09:993</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sales Request Screen Under History Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:10 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:10 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:10 AM</td>
+        <td>
+          ID: SR/230509/000010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:10 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">SortBy_HistoryTab</p>
+            <p class="text-sm">
+              <span>9:33:12 AM</span> / <span>00:00:15:166</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">SortBy_HistoryTab</h5>
+<span class='badge badge-success'>08.03.2023 9:33:12 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:33:27 AM</span>
+<span class='badge badge-default'>00:00:15:166</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Sort By Under History Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:24 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:24 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:24 AM</td>
+        <td>
+          ID: SR/230509/000002
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:24 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:27 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:27 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:27 AM</td>
+        <td>
+          ID: SR/230509/000010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:27 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_R_Historytab_Filter</p>
+            <p class="text-sm">
+              <span>9:33:29 AM</span> / <span>00:01:28:512</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_R_Historytab_Filter</h5>
+<span class='badge badge-success'>08.03.2023 9:33:29 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:34:58 AM</span>
+<span class='badge badge-default'>00:01:28:512</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Filter Operation Under History Tab</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:38 AM</td>
+        <td>
+          Status Of Expired Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:42 AM</td>
+        <td>
+          ATR_Status: EXPIRED
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:42 AM</td>
+        <td>
+          ID: SR/230509/000010
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:33:43 AM</td>
+        <td>
+          Status Of Completed Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:00 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:00 AM</td>
+        <td>
+          Status Of Rejected Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:18 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:18 AM</td>
+        <td>
+          Status Of Qty Full Filled Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:36 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:37 AM</td>
+        <td>
+          Filter through Start Date and End Date
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:34:58 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Offers_NoOffers</p>
+            <p class="text-sm">
+              <span>9:34:59 AM</span> / <span>00:00:04:108</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Offers_NoOffers</h5>
+<span class='badge badge-success'>08.03.2023 9:34:59 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:35:03 AM</span>
+<span class='badge badge-default'>00:00:04:108</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Offers Screen If No Offers Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:03 AM</td>
+        <td>
+          Msg Displayed: No offers yet!
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Offers_HistoryTab</p>
+            <p class="text-sm">
+              <span>9:35:05 AM</span> / <span>00:00:11:899</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Offers_HistoryTab</h5>
+<span class='badge badge-success'>08.03.2023 9:35:05 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:35:17 AM</span>
+<span class='badge badge-default'>00:00:11:899</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify History Screen If Records Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ID: PR/230802/000009
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ProductName: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_Status: completed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_AvailableOn: 02 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ExpiryOn: 02 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ExptdQty: Received Qty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ReceivedQty: 110.0 Q
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_ExptdPrice: Accepted Qty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:35:17 AM</td>
+        <td>
+          ATR_AcceptedQty: 0.0 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Offers_AcceptOffers</p>
+            <p class="text-sm">
+              <span>9:35:19 AM</span> / <span>00:00:16:625</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Offers_AcceptOffers</h5>
+<span class='badge badge-success'>08.03.2023 9:35:19 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:35:35 AM</span>
+<span class='badge badge-default'>00:00:16:625</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if user is able to Accept the Offer</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:35:35 AM</td>
+        <td>
+          No Records to Accept Offer
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_NoRecord</p>
+            <p class="text-sm">
+              <span>9:35:38 AM</span> / <span>00:00:16:072</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_NoRecord</h5>
+<span class='badge badge-success'>08.03.2023 9:35:38 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:35:54 AM</span>
+<span class='badge badge-default'>00:00:16:072</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Advance Payment Request Screen If No Records Are Avaliable</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:35:54 AM</td>
+        <td>
+          Farmer Have Advance Payments Record
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_NoProduct</p>
+            <p class="text-sm">
+              <span>9:35:56 AM</span> / <span>00:00:16:312</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_NoProduct</h5>
+<span class='badge badge-success'>08.03.2023 9:35:56 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:36:12 AM</span>
+<span class='badge badge-default'>00:00:16:312</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Advance Payment Request When there are No Products Available</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:36:12 AM</td>
+        <td>
+          Farmer Already Created Advance Payments Request
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_EligibleAmount</p>
+            <p class="text-sm">
+              <span>9:36:14 AM</span> / <span>00:00:33:771</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_EligibleAmount</h5>
+<span class='badge badge-success'>08.03.2023 9:36:14 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:36:48 AM</span>
+<span class='badge badge-default'>00:00:33:771</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify The Amount Farmer Is Eligible To Request Under AdvancePayments</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:30 AM</td>
+        <td>
+          Farmer Requesting Advance Payment Again!!!!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:30 AM</td>
+        <td>
+          Farmer Had Already Requested For Advance Payment
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:38 AM</td>
+        <td>
+          Enterted Amount: 58349.01
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:40 AM</td>
+        <td>
+          Message Displayed: Amount should be( ₹ 58350.00 - ₹ 408450.00 )
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:46 AM</td>
+        <td>
+          Enterted Amount: 408450.99
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:36:48 AM</td>
+        <td>
+          Message Displayed: Amount should be( ₹ 58350.00 - ₹ 408450.00 )
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_Request</p>
+            <p class="text-sm">
+              <span>9:37:03 AM</span> / <span>00:00:37:648</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_Request</h5>
+<span class='badge badge-success'>08.03.2023 9:37:03 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:37:41 AM</span>
+<span class='badge badge-default'>00:00:37:648</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Farmer Is Trying To Create A New Advance Paymetns Request</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:22 AM</td>
+        <td>
+          Farmer Requesting Advance Payment Again!!!!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:22 AM</td>
+        <td>
+          Farmer Had Already Requested For Advance Payment
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:33 AM</td>
+        <td>
+          BANK DETAILS: >BANK NAME:Testing Bank >IFSC CODE:HDFC0001234 >BRANCH:MG Road >ACCOUNT NO:51234567890 >ACCOUNT NAME:Automation User >ACCOUNT TYPE:Savings
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:41 AM</td>
+        <td>
+          Message Displayed: You have successfully created a advance payment request
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="37"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_SORT_BY_Old_Request</p>
+            <p class="text-sm">
+              <span>9:37:42 AM</span> / <span>00:00:09:039</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_SORT_BY_Old_Request</h5>
+<span class='badge badge-success'>08.03.2023 9:37:42 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:37:51 AM</span>
+<span class='badge badge-default'>00:00:09:039</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Sort the List By Oldest Order</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:51 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:51 AM</td>
+        <td>
+          ATR_Status: Not Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:51 AM</td>
+        <td>
+          ID: ATR-026737
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:51 AM</td>
+        <td>
+          ATR_Date: 09 May 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:51 AM</td>
+        <td>
+          ATR_Loan_Amt: ₹ 90000.0
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="38"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_SORT_BY_Recent_Request</p>
+            <p class="text-sm">
+              <span>9:37:51 AM</span> / <span>00:00:06:174</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_SORT_BY_Recent_Request</h5>
+<span class='badge badge-success'>08.03.2023 9:37:51 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:37:58 AM</span>
+<span class='badge badge-default'>00:00:06:174</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Sort the List By Recent Order</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:58 AM</td>
+        <td>
+          ATR_Product: Paddy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:58 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:58 AM</td>
+        <td>
+          ID: ATR-030332
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:58 AM</td>
+        <td>
+          ATR_Date: 03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:37:58 AM</td>
+        <td>
+          ATR_Loan_Amt: ₹ 58350.0
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">A_P_FILTER_OPERATION</p>
+            <p class="text-sm">
+              <span>9:38:00 AM</span> / <span>00:01:20:167</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">A_P_FILTER_OPERATION</h5>
+<span class='badge badge-success'>08.03.2023 9:38:00 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:39:20 AM</span>
+<span class='badge badge-default'>00:01:20:167</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"> Verifying user is able to Filter the List</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:03 AM</td>
+        <td>
+          Status Of Open Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:07 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:07 AM</td>
+        <td>
+          ID: ATR-030332
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:07 AM</td>
+        <td>
+          Status Of Approved Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:38:24 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:24 AM</td>
+        <td>
+          Status Of Processed Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:38:42 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:42 AM</td>
+        <td>
+          Status Of Disbursed Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:45 AM</td>
+        <td>
+          ATR_Status: Disbursed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:45 AM</td>
+        <td>
+          ID: ATR-029253
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:38:45 AM</td>
+        <td>
+          Status Of Expired Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:39:03 AM</td>
+        <td>
+          No Records Found
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:03 AM</td>
+        <td>
+          Status Of Not Approved Records
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:07 AM</td>
+        <td>
+          ATR_Status: Not Approved
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:07 AM</td>
+        <td>
+          ID: ATR-030157
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:08 AM</td>
+        <td>
+          Filter through Start Date and End Date
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:16 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:16 AM</td>
+        <td>
+          ID: ATR-030332
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:16 AM</td>
+        <td>
+          Filter through Search ATR Number
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:20 AM</td>
+        <td>
+          ATR_Status: Open
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:20 AM</td>
+        <td>
+          ID: ATR-030332
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_O_A_Validate</p>
+            <p class="text-sm">
+              <span>9:39:22 AM</span> / <span>00:00:21:283</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_O_A_Validate</h5>
+<span class='badge badge-success'>08.03.2023 9:39:22 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:39:43 AM</span>
+<span class='badge badge-default'>00:00:21:283</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validate Statements Of Accounts</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:43 AM</td>
+        <td>
+          1 Apr 2023
+03 Aug 2023
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:43 AM</td>
+        <td>
+          Maize 75 Quintal / Paddy 194.5 Quintal / Wheat 99.5 Quintal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:39:43 AM</td>
+        <td>
+          Total Stock: 369 Q
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_O_A_QuantityScreen</p>
+            <p class="text-sm">
+              <span>9:39:50 AM</span> / <span>00:00:32:378</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_O_A_QuantityScreen</h5>
+<span class='badge badge-success'>08.03.2023 9:39:50 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:40:23 AM</span>
+<span class='badge badge-default'>00:00:32:378</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validate Quantity Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:23 AM</td>
+        <td>
+          Message Displayed: No records to download report
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="42"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">S_O_A_ValidateDate</p>
+            <p class="text-sm">
+              <span>9:40:27 AM</span> / <span>00:00:19:785</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">S_O_A_ValidateDate</h5>
+<span class='badge badge-success'>08.03.2023 9:40:27 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:40:47 AM</span>
+<span class='badge badge-default'>00:00:19:785</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Validate Date Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:47 AM</td>
+        <td>
+          Message Displayed: From date should be less than and equal to End date
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Profile_Screen</p>
+            <p class="text-sm">
+              <span>9:40:49 AM</span> / <span>00:00:05:496</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Profile_Screen</h5>
+<span class='badge badge-success'>08.03.2023 9:40:49 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:40:55 AM</span>
+<span class='badge badge-default'>00:00:05:496</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Profile Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          Mem ID : 20045917
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          FirstName: QA Automation
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          LastName: Testing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          MobileNo: 9731318493
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          LandInAcers: 500.0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:40:55 AM</td>
+        <td>
+          Address: Basantpur, Basantpur, Araria, Araria, Bihar - 555555
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="44"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Profile_Edit</p>
+            <p class="text-sm">
+              <span>9:40:58 AM</span> / <span>00:00:16:233</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Profile_Edit</h5>
+<span class='badge badge-success'>08.03.2023 9:40:58 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:41:14 AM</span>
+<span class='badge badge-default'>00:00:16:233</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=44</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Edit Profile Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:41:07 AM</td>
+        <td>
+          Dark Mode Button: Enabled
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:41:14 AM</td>
+        <td>
+          Msg Displayed: Farmer profile updated successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="45"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Logout</p>
+            <p class="text-sm">
+              <span>9:41:30 AM</span> / <span>00:00:14:352</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Logout</h5>
+<span class='badge badge-success'>08.03.2023 9:41:30 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:41:45 AM</span>
+<span class='badge badge-default'>00:00:14:352</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if the user is not able to Logout</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:41:45 AM</td>
+        <td>
+          Test Case executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="46"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">MarketPlace Title</p>
+            <p class="text-sm">
+              <span>9:41:45 AM</span> / <span>00:01:10:317</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">MarketPlace Title</h5>
+<span class='badge badge-success'>08.03.2023 9:41:45 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:42:55 AM</span>
+<span class='badge badge-default'>00:01:10:317</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=46</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Market Place Title</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:42:16 AM</td>
+        <td>
+          Msg Displayed: Important
+
+This rate is only indicative and is not the exact sale price. Seller should consider the outside Market Rate, Market News/Information before arriving at a conclusion of their product rate before making an offer.
+
+This rate is derived from GrainBank system's real time transactions trend for last few days/weeks/months. Real price is available in offers section or if you place your offer, it’s valid only once accepted by buyers.
+
+Please note that just placing your offer doesn’t confirm the sale of your produce.
+
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:42:51 AM</td>
+        <td>
+          User Loged In Successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:42:55 AM</td>
+        <td>
+          Title Displayed: Market Place
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:42:55 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="47"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Warehouse Details in MarketPlace</p>
+            <p class="text-sm">
+              <span>9:42:55 AM</span> / <span>00:00:05:152</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Warehouse Details in MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:42:55 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:43:00 AM</span>
+<span class='badge badge-default'>00:00:05:152</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Warehouse Details on MarketPlace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:43:00 AM</td>
+        <td>
+          Mamta Warehouse, Samastipur N, Bihar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:43:00 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="48"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PPL Message</p>
+            <p class="text-sm">
+              <span>9:43:05 AM</span> / <span>00:00:08:690</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PPL Message</h5>
+<span class='badge badge-success'>08.03.2023 9:43:05 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:43:13 AM</span>
+<span class='badge badge-default'>00:00:08:690</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=48</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify PPL Message</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:43:09 AM</td>
+        <td>
+          Permissible Purchase Limit: Based on your transactions, ₹ 30,000 is your Purchase limit
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:43:13 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="49"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Home Button Validation In MarketPlace</p>
+            <p class="text-sm">
+              <span>9:43:13 AM</span> / <span>00:00:11:906</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Home Button Validation In MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:43:13 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:43:25 AM</span>
+<span class='badge badge-default'>00:00:11:906</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=49</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify User Lands on Home Screen on click of Home Button in Marketplace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:43:25 AM</td>
+        <td>
+          User Name: MaketPlace Automation
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:43:25 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="50"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">My Orders Button Validation In MarketPlace</p>
+            <p class="text-sm">
+              <span>9:43:25 AM</span> / <span>00:00:22:937</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">My Orders Button Validation In MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:43:25 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:43:48 AM</span>
+<span class='badge badge-default'>00:00:22:937</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=50</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify User Lands on My Orders Screen on click of My Orders in Marketplace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:43:48 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="51"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">My Cart Button Validation In MarketPlace</p>
+            <p class="text-sm">
+              <span>9:43:48 AM</span> / <span>00:00:21:707</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">My Cart Button Validation In MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:43:48 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:44:10 AM</span>
+<span class='badge badge-default'>00:00:21:707</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=51</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify User Lands on My Cart Screen on click of View Cart in Marketplace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:44:10 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="52"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">PPL Message Validation In My Cart</p>
+            <p class="text-sm">
+              <span>9:44:10 AM</span> / <span>00:00:22:713</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PPL Message Validation In My Cart</h5>
+<span class='badge badge-success'>08.03.2023 9:44:10 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:44:33 AM</span>
+<span class='badge badge-default'>00:00:22:713</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=52</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify PPL message is displayed in My Cart Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:44:23 AM</td>
+        <td>
+          Based on your transactions, ₹ 30,000 is your Purchase limit
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:44:33 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="53"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Start Shopping</p>
+            <p class="text-sm">
+              <span>9:44:33 AM</span> / <span>00:00:21:956</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Start Shopping</h5>
+<span class='badge badge-success'>08.03.2023 9:44:33 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:44:55 AM</span>
+<span class='badge badge-default'>00:00:21:956</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=53</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify Start Shopping button in the My cart screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:44:45 AM</td>
+        <td>
+          Cart is Empty
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:44:55 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="54"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Product Listing under Categories</p>
+            <p class="text-sm">
+              <span>9:44:55 AM</span> / <span>00:01:07:664</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Product Listing under Categories</h5>
+<span class='badge badge-success'>08.03.2023 9:44:55 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:46:02 AM</span>
+<span class='badge badge-default'>00:01:07:664</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=54</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if products are listed in all the catergories SKU</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS (15 Seeds)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:04 AM</td>
+        <td>
+          Minimum Quantity: 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Brand Name: ITC Agri Ltd
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Product Name: TROPHY (100 GM X 50 Units)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Product Price: 70
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Sold by : BigHaat
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:15 AM</td>
+        <td>
+          Minimum Quantity: 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Brand Name: Syngenta
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Product Name: PLANOFIX ALPHA GROWTH PROMOTER  (100 ml)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Product Price: 121
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:26 AM</td>
+        <td>
+          Minimum Quantity: 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Brand Name: Monsanto
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Product Name: RAIPER (10 GM X 200 Units)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Product Price: 45
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Sold by : Farmhub
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:39 AM</td>
+        <td>
+          Minimum Quantity: 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Brand Name: Monsanto
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Product Name: FOCUS (100 GM X 100 Units)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Product Price: 110
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Sold by : BigHaat
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:45:50 AM</td>
+        <td>
+          Minimum Quantity: 3
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:02 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="55"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Search Product In MarketPlace</p>
+            <p class="text-sm">
+              <span>9:46:02 AM</span> / <span>00:01:05:478</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Search Product In MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:46:02 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:47:08 AM</span>
+<span class='badge badge-default'>00:01:05:478</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=55</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify User is able to search for product in Marketplace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS (15 Seeds)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:46:15 AM</td>
+        <td>
+          Minimum Quantity: 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:46:41 AM</td>
+        <td>
+          No Products Found!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:47:03 AM</td>
+        <td>
+          No Products Found!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:08 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="56"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Verify Product Details In MarketPlace</p>
+            <p class="text-sm">
+              <span>9:47:08 AM</span> / <span>00:00:28:643</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Verify Product Details In MarketPlace</h5>
+<span class='badge badge-success'>08.03.2023 9:47:08 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:47:36 AM</span>
+<span class='badge badge-default'>00:00:28:643</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=56</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify product details Marketplace Screen</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Minimum Quantity : 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Delivery to : Mamta Warehouse, Samastipur N, Bihar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Estimated delivery time is 7 days.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:20 AM</td>
+        <td>
+          Total : ₹ 0
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:36 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="57"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add Product to cart</p>
+            <p class="text-sm">
+              <span>9:47:36 AM</span> / <span>00:00:48:733</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Add Product to cart</h5>
+<span class='badge badge-success'>08.03.2023 9:47:36 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:48:25 AM</span>
+<span class='badge badge-default'>00:00:48:733</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=57</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if user is able to add product to cart and Increase and Decrease Quantity</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Product Details
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Minimum Quantity : 1
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Delivery to : Mamta Warehouse, Samastipur N, Bihar
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:47:47 AM</td>
+        <td>
+          Estimated delivery time is 7 days.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:09 AM</td>
+        <td>
+          Item(s) in cart: ₹ 268
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:09 AM</td>
+        <td>
+          Button Displayed View cart
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:25 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="58"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Perform Sort By Price</p>
+            <p class="text-sm">
+              <span>9:48:25 AM</span> / <span>00:00:34:334</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Perform Sort By Price</h5>
+<span class='badge badge-success'>08.03.2023 9:48:25 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:48:59 AM</span>
+<span class='badge badge-default'>00:00:34:334</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=58</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if user is able to perform sort by operation in Market Place</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:40 AM</td>
+        <td>
+          Brand Name: Monsanto
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:40 AM</td>
+        <td>
+          Product Name: Ashoka seeds (40 Kg)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:40 AM</td>
+        <td>
+          Product Price: 10,000
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:40 AM</td>
+        <td>
+          Sold by : Farmhub
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:50 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:50 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS (15 Seeds)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:50 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:50 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:48:59 AM</td>
+        <td>
+          Test Case Executed Successfully
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="59"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Perform Filter Operation</p>
+            <p class="text-sm">
+              <span>9:48:59 AM</span> / <span>00:01:16:432</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Perform Filter Operation</h5>
+<span class='badge badge-success'>08.03.2023 9:48:59 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:50:16 AM</span>
+<span class='badge badge-default'>00:01:16:432</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=59</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if user is able to perform Filter operation in Market Place</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095015.png' src="/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095015.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:14 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:14 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS (15 Seeds)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:14 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:14 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:29 AM</td>
+        <td>
+          Brand Name: Iris
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:29 AM</td>
+        <td>
+          Product Name: IRIS HYBRID OKRA SEEDS (15 Seeds)
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:29 AM</td>
+        <td>
+          Product Price: 134
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>9:49:29 AM</td>
+        <td>
+          Sold by : ABC
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>9:49:35 AM</td>
+        <td>
+          No Product!!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:50:16 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by By.chained({By.id: com.GrainbankFarmer.app:id/imageViewBackButton}) (tried for 20 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generic.BaseTest.waitForVisibility(BaseTest.java:165)
+	at generic.BaseTest.click(BaseTest.java:170)
+	at pages.FarmerMarketPlacePage.clickmpBackBtn(FarmerMarketPlacePage.java:286)
+	at com.farmer.scripts.MarketPlace.TC14_FilterOperation.testFilter(TC14_FilterOperation.java:65)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.id: com.GrainbankFarmer.app:id/imageViewBackButton})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.isDisplayed(<generated>)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 29 more
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4446a191 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 36 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.id: com.GrainbankFarmer.app:id/imageViewBackButton})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'JREDDY.local', ip: 'fe80:0:0:0:1484:bc9:bf2b:397c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.4', java.version: '1.8.0_333'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 38 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="60"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Categories In ProductPage</p>
+            <p class="text-sm">
+              <span>9:50:16 AM</span> / <span>00:00:16:239</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Categories In ProductPage</h5>
+<span class='badge badge-success'>08.03.2023 9:50:16 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:50:32 AM</span>
+<span class='badge badge-default'>00:00:16:239</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=60</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if user is able to see products are listing under categories in product page</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095031.png' src="/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095031.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:50:32 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.AccessibilityId: Market Place Feature Text})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(<generated>)
+	at pages.FarmerHomePage.clickMarketPlace(FarmerHomePage.java:313)
+	at com.farmer.scripts.MarketPlace.TC15_CategoriesInProductPage.testCategoriesInProductPage(TC15_CategoriesInProductPage.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@6da86e98 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 29 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.AccessibilityId: Market Place Feature Text})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'JREDDY.local', ip: 'fe80:0:0:0:1484:bc9:bf2b:397c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.4', java.version: '1.8.0_333'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="61"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Add Product to cart in Product Listing Screen</p>
+            <p class="text-sm">
+              <span>9:50:32 AM</span> / <span>00:00:16:237</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Add Product to cart in Product Listing Screen</h5>
+<span class='badge badge-success'>08.03.2023 9:50:32 AM</span>
+<span class='badge badge-danger'>08.03.2023 9:50:48 AM</span>
+<span class='badge badge-default'>00:00:16:237</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=61</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Verify if the product was able to add to cart from product listing page</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095048.png' src="/Users/jagdeeshreddy/Documents/gitRepoSuite/fRegression/farmertestautomation/Screenshots/20230803095048.png">
+    
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>9:50:48 AM</td>
+        <td>
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.AccessibilityId: Market Place Feature Text})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:126)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at io.appium.java_client.android.AndroidElement$$EnhancerByCGLIB$$b598166c.click(<generated>)
+	at pages.FarmerHomePage.clickMarketPlace(FarmerHomePage.java:313)
+	at com.farmer.scripts.MarketPlace.TC16_AddProdToCartProductListingPage.testAddProdToCartProductListPage(TC16_AddProdToCartProductListingPage.java:35)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@4607cbe2 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:119)
+	... 29 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.AccessibilityId: Market Place Feature Text})
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'JREDDY.local', ip: 'fe80:0:0:0:1484:bc9:bf2b:397c%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.4', java.version: '1.8.0_333'
+Driver info: driver.version: AndroidDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:74)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at io.appium.java_client.DefaultGenericMobileDriver.findElement(DefaultGenericMobileDriver.java:58)
+	at io.appium.java_client.AppiumDriver.findElement(AppiumDriver.java:1)
+	at io.appium.java_client.android.AndroidDriver.findElement(AndroidDriver.java:1)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$0(AppiumElementLocator.java:120)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:172)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:1)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+</textarea>
+          
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

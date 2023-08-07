@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.farmer.script.SoilTest.TC_005_ST_ViewDetails_ResultReady_HistoryTab_Test">
+        <methods>
+          <include name="reportSetup"/>
+          <include name="setup"/>
+          <include name="getResult"/>
+          <include name="tearDown"/>
+          <include name="statusResultReady_HistoryTab"/>
+          <include name="uninstallApp"/>
+        </methods>
+      </class> <!-- com.farmer.script.SoilTest.TC_005_ST_ViewDetails_ResultReady_HistoryTab_Test -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

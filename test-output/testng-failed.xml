@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Farmer Regression Suite]">
+  <test thread-count="5" name="Farmer Regression(failed)">
+    <classes>
+      <class name="com.farmer.script.SoilTest.TC_010_ST_HistoryTab_SortBy_OldestRecord_Test">
+        <methods>
+          <include name="reportSetup"/>
+          <include name="setup"/>
+          <include name="getResult"/>
+          <include name="tearDown"/>
+          <include name="historyTab_Sort_By_Old_Request"/>
+          <include name="uninstallApp"/>
+        </methods>
+      </class> <!-- com.farmer.script.SoilTest.TC_010_ST_HistoryTab_SortBy_OldestRecord_Test -->
+    </classes>
+  </test> <!-- Farmer Regression(failed) -->
+</suite> <!-- Failed suite [Farmer Regression Suite] -->
